@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:bramblur/input_helper.dart';
 
-typedef CaretMoved = void Function(Offset? globalCaretPosition);
-typedef TextChanged = void Function(String text);
+typedef void CaretMoved(Offset? globalCaretPosition);
+typedef void TextChanged(String text);
 
 // Helper widget to track caret position.
 class TrackingTextInput extends StatefulWidget {
-  const TrackingTextInput(
+  TrackingTextInput(
       {Key? key,
       this.onCaretMoved,
       this.onTextChanged,

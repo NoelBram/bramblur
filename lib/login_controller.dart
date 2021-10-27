@@ -4,22 +4,22 @@ import 'dart:ui';
 import 'package:flare_flutter/flare.dart';
 import 'package:flare_flutter/flare_controls.dart';
 
-class LoginController extends FlareControls {
+class bear_log_in_Controller extends FlareControls {
   // Store a reference to our face control node (the "ctrl_look" node in Flare)
   ActorNode? _faceControl;
 
   // Storage for our matrix to get global Flutter coordinates into Flare world coordinates.
-  final Mat2D _globalToFlareWorld = Mat2D();
+  Mat2D _globalToFlareWorld = Mat2D();
 
   // Caret in Flutter global coordinates.
-  final Vec2D _caretGlobal = Vec2D();
+  Vec2D _caretGlobal = Vec2D();
 
   // Caret in Flare world coordinates.
-  final Vec2D _caretWorld = Vec2D();
+  Vec2D _caretWorld = Vec2D();
 
   // Store the origin in both world and local transform spaces.
-  final Vec2D _faceOrigin = Vec2D();
-  final Vec2D _faceOriginLocal = Vec2D();
+  Vec2D _faceOrigin = Vec2D();
+  Vec2D _faceOriginLocal = Vec2D();
 
   bool _hasFocus = false;
 
@@ -41,7 +41,7 @@ class LoginController extends FlareControls {
 
       // To make it more interesting, we'll also add a sinusoidal vertical offset.
       _caretWorld[1] +=
-          sin(DateTime.now().millisecondsSinceEpoch / 300.0) * 70.0;
+          sin(new DateTime.now().millisecondsSinceEpoch / 300.0) * 70.0;
 
       // Compute direction vector.
       Vec2D toCaret = Vec2D.subtract(Vec2D(), _caretWorld, _faceOrigin);

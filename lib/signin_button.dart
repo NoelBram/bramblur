@@ -1,6 +1,3 @@
-// ignore: file_names
-// ignore_for_file: file_names, duplicate_ignore
-
 import 'package:flutter/material.dart';
 
 class SigninButton extends StatelessWidget {
@@ -24,7 +21,7 @@ class SigninButton extends StatelessWidget {
       height: 50.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           colors: <Color>[
             Color(0xff00BFA5),
             Color(0xff64FFDA),
