@@ -1,143 +1,81 @@
+// ignore_for_file: require_trailing_commas
+// Copyright 2020 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flare_flutter/flare_actor.dart';
-import 'package:flutter/rendering.dart';
-import 'package:bramblur/signin_button.dart';
-import 'package:bramblur/login_controller.dart';
-import 'package:bramblur/tracking_text_input.dart';
+import 'package:flutter_signin_button/button_builder.dart';
 
-void main() => runApp(MyApp());
+import './register_page.dart';
+import './signin_page.dart';
 
-class MyApp extends StatelessWidget {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  /// Requires that the Firebase Auth emulator is running locally
+  /// e.g via `melos run firebase:emulator`.
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  runApp(AuthExampleApp());
+}
+
+/// The entry point of the application.
+///
+/// Returns a [MaterialApp].
+class AuthExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      title: 'BRAM BLUR',
+      theme: ThemeData.dark(),
+      home: Scaffold(
+        body: AuthTypeSelector(),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  late bear_log_in_Controller _bear_log_inController;
-  @override
-  initState() {
-    _bear_log_inController = bear_log_in_Controller();
-    super.initState();
+/// Provides a UI to select a authentication type page
+class AuthTypeSelector extends StatelessWidget {
+  // Navigates to a new page
+  void _pushPage(BuildContext context, Widget page) {
+    Navigator.of(context) /*!*/ .push(
+      MaterialPageRoute<void>(builder: (_) => page),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    EdgeInsets devicePadding = MediaQuery.of(context).padding;
-
     return Scaffold(
-      backgroundColor: Color.fromRGBO(93, 142, 155, 1.0),
-      body: Container(
-        child: Stack(
-          children: <Widget>[
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  // Box decoration takes a gradient
-                  gradient: LinearGradient(
-                    // Where the linear gradient begins and ends
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    // Add one stop for each color. Stops should increase from 0 to 1
-                    stops: [0.0, 1.0],
-                    colors: [
-                      Color(0xff00BFA5),
-                      Color(0xff64FFDA),
-                    ],
-                  ),
-                ),
-              ),
+      appBar: AppBar(
+        title: const Text('BRAM BLUR'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: SignInButtonBuilder(
+              icon: Icons.person_add,
+              backgroundColor: Colors.indigo,
+              text: 'Registration',
+              onPressed: () => _pushPage(context, RegisterPage()),
             ),
-            Positioned.fill(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.only(
-                    left: 20.0, right: 20.0, top: devicePadding.top + 50.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                        height: 200,
-                        padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                        child: FlareActor(
-                          "assets/Teddy.flr",
-                          shouldClip: false,
-                          alignment: Alignment.bottomCenter,
-                          fit: BoxFit.contain,
-                          controller: _bear_log_inController,
-                        )),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(25.0),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(30.0),
-                        child: Form(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              TrackingTextInput(
-                                label: "Email",
-                                hint: "What's your email address?",
-                                onCaretMoved: (Offset? caret) {
-                                  _bear_log_inController.lookAt(caret);
-                                },
-                              ),
-                              TrackingTextInput(
-                                label: "Password",
-                                hint: "I'm not watching",
-                                isObscured: true,
-                                onCaretMoved: (Offset? caret) {
-                                  _bear_log_inController
-                                      .coverEyes(caret != null);
-                                  _bear_log_inController.lookAt(null);
-                                },
-                                onTextChanged: (String value) {
-                                  _bear_log_inController.setPassword(value);
-                                },
-                              ),
-                              SigninButton(
-                                child: Text("Sign In",
-                                    style: TextStyle(
-                                        fontFamily: "OpenSans",
-                                        fontSize: 16,
-                                        color: Colors.white)),
-                                onPressed: () {
-                                  _bear_log_inController.submitPassword();
-                                },
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: SignInButtonBuilder(
+              icon: Icons.verified_user,
+              backgroundColor: Colors.orange,
+              text: 'Sign In',
+              onPressed: () => _pushPage(context, SignInPage()),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
