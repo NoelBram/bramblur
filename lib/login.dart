@@ -28,10 +28,11 @@ class _RegisterPageState extends State<RegisterPage> {
   String _userEmail = '';
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.black38,
+    onPrimary: Colors.lightGreenAccent,
     //primary: Colors.lightGreenAccent,
-    //minimumSize: Size(88, 36),
-    padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 11),
+    //minimumSize: Size(88, 36),padding: const EdgeInsets.symmetric(vertical: 16),
+    alignment: Alignment.center,
+    padding: const EdgeInsets.symmetric(vertical: 16),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(24)),
     ),
