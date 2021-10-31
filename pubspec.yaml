@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  animated_text_kit: ^4.2.1
   cupertino_icons: ^0.1.2
   flare_flutter: ^3.0.2
   flutter_lints: ^1.0.4
@@ -21,7 +22,6 @@ dependencies:
   drive: ^0.1.0
   pedantic: ^1.11.1
   http: ^0.13.4
-  firebase_auth_web: ^3.1.3
 
 dev_dependencies:
   flutter_test:

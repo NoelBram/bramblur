@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animated_text_kit",
+      "rootUri": "file:///Users/NoelBrambila/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///Users/NoelBrambila/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.1.2",
       "packageUri": "lib/",
@@ -326,7 +332,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-10-29T09:18:27.752289Z",
+  "generated": "2021-10-31T04:20:59.109930Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }
