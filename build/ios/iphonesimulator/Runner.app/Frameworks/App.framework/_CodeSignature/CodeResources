@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		a5O9NNVmqGCX1r0+g7dw1cD0eWc=
+		W+c2nJbk2nwSATDEYQc8Nnr9QVs=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		AOJeCAbBWr9teTCPWPkKCCT7gWg=
+		kB7MgT8Id7m81/WlShmGqyrXEe8=
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
@@ -42,11 +42,19 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		xjnDI99d5pdJANZmZB2l9SRxgkg=
+		S95ntx10rlsOX2X8RPewo4fpYaU=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		TdRNbRcrlXQQgeiweLFizPmk92g=
+		</data>
+		<key>flutter_assets/packages/flutter_google_places/assets/google_black.png</key>
+		<data>
+		gcHJexRXUa/eZ+zWzgfwxNGvVeI=
+		</data>
+		<key>flutter_assets/packages/flutter_google_places/assets/google_white.png</key>
+		<data>
+		/EjTyBzj/nusE+LbwLayR22clfo=
 		</data>
 		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/facebook_new.png</key>
 		<data>
@@ -107,11 +115,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a5O9NNVmqGCX1r0+g7dw1cD0eWc=
+			W+c2nJbk2nwSATDEYQc8Nnr9QVs=
 			</data>
 			<key>hash2</key>
 			<data>
-			jbhS+zrj3kWg/3BaHQEayrTyWH+ly+bSwWFagZePwf4=
+			6I5xNaQ4j8geoPnHqoWCxu/9iG/E5VoEgvzHFgArFHA=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -129,11 +137,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AOJeCAbBWr9teTCPWPkKCCT7gWg=
+			kB7MgT8Id7m81/WlShmGqyrXEe8=
 			</data>
 			<key>hash2</key>
 			<data>
-			m7df4dtddxyQKUjSR+CgpZeUkT9M4YdOSsT768gVJq0=
+			X0G8PoQOY8DRy/v8NkOpJ+3ZG7kraV6rPUXmz8RVHE0=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/Teddy.flr</key>
@@ -184,11 +192,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xjnDI99d5pdJANZmZB2l9SRxgkg=
+			S95ntx10rlsOX2X8RPewo4fpYaU=
 			</data>
 			<key>hash2</key>
 			<data>
-			jHSrCqDyos8hq1K186VeP/SvS+2v5xtoU06p+Wa/pWk=
+			qvaUCtZVpSGPxyAlDTTsZyAHIq64IWjtkiQ5iD+C8eg=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -200,6 +208,28 @@
 			<key>hash2</key>
 			<data>
 			d6fK2iHuml40zu1xSV3HnoE9PVFhQREGOzVfduySSBY=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_google_places/assets/google_black.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gcHJexRXUa/eZ+zWzgfwxNGvVeI=
+			</data>
+			<key>hash2</key>
+			<data>
+			ac+pOdlI0CfP987EoH5lbG/G7qPkRm0o8fUXjoZQ0h8=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_google_places/assets/google_white.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/EjTyBzj/nusE+LbwLayR22clfo=
+			</data>
+			<key>hash2</key>
+			<data>
+			Baqn3AhGOQS1CMlsNaXeNDA+oQ+naYgqA+4heYl97iw=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/facebook_new.png</key>

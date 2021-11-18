@@ -22,19 +22,20 @@ if (flutterVersionName == null) {
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-  compileSdkVersion 29
+  compileSdkVersion 30
 
   lintOptions {
     disable 'InvalidPackage'
   }
 
   defaultConfig {
-    applicationId '1:659788470466:android:65ccec755d20123fdb835b'
+    applicationId 'com.bram.blur'
     minSdkVersion 21
-    targetSdkVersion 28
+    targetSdkVersion 30
     versionCode flutterVersionCode.toInteger()
     versionName flutterVersionName
     testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -47,6 +48,7 @@ android {
       signingConfig signingConfigs.debug
     }
   }
+    buildToolsVersion '31.0.0'
 }
 
 flutter {
@@ -55,10 +57,9 @@ flutter {
 
 dependencies {
   testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'androidx.test:runner:1.2.0'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-  implementation platform('com.google.firebase:firebase-bom:28.4.2')
+  androidTestImplementation 'androidx.test:runner:1.4.0'
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+  implementation platform('com.google.firebase:firebase-bom:29.0.0')
   implementation 'com.google.firebase:firebase-analytics'
 }
 
-apply plugin: 'com.google.gms.google-services'

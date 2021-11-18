@@ -13,6 +13,7 @@ import 'package:flutter_signin_button/button_builder.dart';
 
 import 'login.dart';
 import 'sign_up_page.dart';
+import 'components/home.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,6 +52,11 @@ class AuthTypeSelector extends StatelessWidget {
       MaterialPageRoute<void>(builder: (_) => page),
     );
   }
+
+  final _tittleTextStyle = TextStyle(
+    fontSize: 50.0,
+    fontFamily: 'OpenSans',
+  );
 
   final _textStyle = TextStyle(
     fontSize: 22.0,
@@ -104,7 +110,7 @@ class AuthTypeSelector extends StatelessWidget {
       child: AnimatedTextKit(
         animatedTexts: [
           ColorizeAnimatedText('BRAM BLUR',
-              textStyle: _textStyle,
+              textStyle: _tittleTextStyle,
               colors: _colorizeColors,
               speed: const Duration(milliseconds: 1100)),
           //FlickerAnimatedText('BLUR'),
@@ -113,19 +119,38 @@ class AuthTypeSelector extends StatelessWidget {
       ),
     );
 
-    final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
+    final ButtonStyle loginButtonStyle = ElevatedButton.styleFrom(
       onPrimary: Colors.black38,
-      //primary: Colors.lightGreenAccent,
+      primary: Colors.blueAccent,
       //minimumSize: Size(88, 36),
       padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 11),
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(24)),
+        borderRadius: BorderRadius.all(Radius.circular(11)),
       ),
     );
+    final ButtonStyle signUpButtonStyle = ElevatedButton.styleFrom(
+      onPrimary: Colors.black38,
+      primary: Colors.grey,
+      //minimumSize: Size(88, 36),
+      padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 11),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(11)),
+      ),
+    );
+    final ButtonStyle demoButtonStyle = ElevatedButton.styleFrom(
+      onPrimary: Colors.black38,
+      primary: Colors.white30,
+      //minimumSize: Size(88, 36),
+      padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 11),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(11)),
+      ),
+    );
+
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: ElevatedButton(
-        style: raisedButtonStyle,
+        style: loginButtonStyle,
         onPressed: () => _pushPage(context, RegisterPage()),
         child: Text(
           "Log In",
@@ -136,7 +161,7 @@ class AuthTypeSelector extends StatelessWidget {
     final signUpButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: ElevatedButton(
-        style: raisedButtonStyle,
+        style: signUpButtonStyle,
         onPressed: () => _pushPage(context, SignInPage()),
         child: Text(
           "Sign up",
@@ -144,6 +169,24 @@ class AuthTypeSelector extends StatelessWidget {
         ),
       ),
     );
+    final homeButton = Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: ElevatedButton(
+        style: demoButtonStyle,
+        onPressed: () => _pushPage(context, Home()),
+        child: AnimatedTextKit(
+          animatedTexts: [
+            ColorizeAnimatedText('Demo',
+                textStyle: _textStyle,
+                colors: _colorizeColors,
+                speed: const Duration(milliseconds: 1100)),
+            //FlickerAnimatedText('BLUR'),
+          ],
+          repeatForever: true,
+        ),
+      ),
+    );
+
     return Scaffold(
       appBar: AppBar(),
       body: Column(
@@ -163,6 +206,11 @@ class AuthTypeSelector extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
             child: signUpButton,
+          ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: homeButton,
           ),
         ],
       ),
